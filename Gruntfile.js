@@ -230,5 +230,52 @@ module.exports = function(grunt) {
     grunt.file.mkdir('tmp/result');
   });
 
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
+
+  // grunt.registerTask ('browser:test', ['default', 'jasmine:build', 'connect', 'webdriver_jasmine_runner']);
+
+  // grunt.loadNpmTasks('grunt-webdriver-jasmine-runner');
+
+  //  _.merge(config, {
+  //     webdriver_jasmine_runner: {
+  //       App: {
+  //         options: {
+  //         }
+  //       }
+  //     }
+  //   });
+
+  _.merge(config, {
+      jasmine: {
+        test: {
+            src: 'scripts/*.js',
+            options: {
+                specs: 'test/*.spec.js'
+            }
+        }
+      }
+  });
+  
   grunt.initConfig(config);
+
+
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
